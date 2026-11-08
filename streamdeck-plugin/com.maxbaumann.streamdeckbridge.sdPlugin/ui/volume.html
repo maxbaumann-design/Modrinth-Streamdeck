@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head lang="en">
+		<title>Volume</title>
+		<meta charset="utf-8" />
+		<script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+	</head>
+	<body>
+		<sdpi-item label="Category">
+			<sdpi-select setting="category" default="master">
+				<option value="master">Master</option>
+				<option value="music">Music</option>
+				<option value="record">Jukebox / Note blocks</option>
+				<option value="weather">Weather</option>
+				<option value="block">Blocks</option>
+				<option value="hostile">Hostile creatures</option>
+				<option value="neutral">Friendly creatures</option>
+				<option value="player">Players</option>
+				<option value="ambient">Ambient / Environment</option>
+				<option value="voice">Voice / Speech</option>
+				<option value="ui">UI</option>
+			</sdpi-select>
+		</sdpi-item>
+		<sdpi-item label="Dial step (%)">
+			<sdpi-range setting="step" min="1" max="25" step="1" default="5" showlabels></sdpi-range>
+		</sdpi-item>
+		<sdpi-item>
+			<div style="opacity: 0.7; line-height: 1.4;">Key press: mute / unmute. Stream Deck + dial: rotate to adjust, press to mute.</div>
+		</sdpi-item>
+		<script src="connection.js"></script>
+	</body>
+</html>

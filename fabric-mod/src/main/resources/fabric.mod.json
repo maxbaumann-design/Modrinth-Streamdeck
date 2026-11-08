@@ -1,0 +1,29 @@
+{
+	"schemaVersion": 1,
+	"id": "streamdeckbridge",
+	"version": "${version}",
+	"name": "Stream Deck Bridge",
+	"description": "Control Minecraft from your Elgato Stream Deck: switch game modes, disconnect, run commands and show live ping, FPS and coordinates on your keys.",
+	"authors": [
+		"Max Baumann"
+	],
+	"contact": {
+		"homepage": "https://github.com/maxbaumann-design/Modrinth-Streamdeck",
+		"sources": "https://github.com/maxbaumann-design/Modrinth-Streamdeck",
+		"issues": "https://github.com/maxbaumann-design/Modrinth-Streamdeck/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/streamdeckbridge/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.maxbaumann.streamdeckbridge.StreamDeckBridgeClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

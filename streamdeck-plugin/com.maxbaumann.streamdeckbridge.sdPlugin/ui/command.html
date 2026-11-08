@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head lang="en">
+		<title>Run Command</title>
+		<meta charset="utf-8" />
+		<script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+	</head>
+	<body>
+		<sdpi-item label="Type">
+			<sdpi-select setting="kind" default="command">
+				<option value="command">Command (e.g. time set day)</option>
+				<option value="chat">Chat message</option>
+			</sdpi-select>
+		</sdpi-item>
+		<sdpi-item label="Text">
+			<sdpi-textarea setting="command" placeholder="time set day" rows="3"></sdpi-textarea>
+		</sdpi-item>
+		<sdpi-item label="Key label">
+			<sdpi-textfield setting="label" placeholder="Optional"></sdpi-textfield>
+		</sdpi-item>
+		<script src="connection.js"></script>
+	</body>
+</html>

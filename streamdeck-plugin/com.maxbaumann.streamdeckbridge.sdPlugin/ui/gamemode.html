@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+	<head lang="en">
+		<title>Game Mode</title>
+		<meta charset="utf-8" />
+		<script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+	</head>
+	<body>
+		<sdpi-item label="Mode">
+			<sdpi-select setting="mode" default="cycle">
+				<option value="cycle">Cycle (Survival → Creative → Adventure → Spectator)</option>
+				<option value="toggle">Toggle Survival ⇄ Creative</option>
+				<option value="survival">Survival</option>
+				<option value="creative">Creative</option>
+				<option value="adventure">Adventure</option>
+				<option value="spectator">Spectator</option>
+			</sdpi-select>
+		</sdpi-item>
+		<sdpi-item>
+			<div style="opacity: 0.7; line-height: 1.4;">Sends <code>/gamemode</code>, so on servers you need the permission to use it.</div>
+		</sdpi-item>
+		<script src="connection.js"></script>
+	</body>
+</html>

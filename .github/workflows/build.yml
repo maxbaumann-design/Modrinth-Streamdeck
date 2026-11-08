@@ -1,0 +1,52 @@
+name: Build
+
+on:
+  push:
+    branches: ["**"]
+    tags-ignore: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  fabric-mod:
+    name: Fabric mod
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 25
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Build and test
+        working-directory: fabric-mod
+        run: ./gradlew build --no-daemon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: streamdeck-bridge-mod
+          path: |
+            fabric-mod/build/libs/*.jar
+            !fabric-mod/build/libs/*-sources.jar
+
+  streamdeck-plugin:
+    name: Stream Deck plugin
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: streamdeck-plugin/package-lock.json
+      - name: Install, build, validate and pack
+        working-directory: streamdeck-plugin
+        run: |
+          npm ci
+          npm run typecheck
+          npm run build
+          npm run validate
+          npm run pack
+      - uses: actions/upload-artifact@v4
+        with:
+          name: streamdeck-bridge-plugin
+          path: streamdeck-plugin/dist/*.streamDeckPlugin

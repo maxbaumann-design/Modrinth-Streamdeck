@@ -1,0 +1,317 @@
+{
+	"Name": "Minecraft Bridge",
+	"Version": "1.0.0.0",
+	"Author": "Max Baumann",
+	"Description": "Control Minecraft from your Stream Deck: game mode, disconnect, commands, screenshots and live ping, FPS and coordinates. Requires the Stream Deck Bridge Fabric mod.",
+	"URL": "https://github.com/maxbaumann-design/Modrinth-Streamdeck",
+	"Category": "Minecraft Bridge",
+	"CategoryIcon": "imgs/plugin/category-icon",
+	"CodePath": "bin/plugin.js",
+	"Icon": "imgs/plugin/marketplace",
+	"SDKVersion": 3,
+	"Software": {
+		"MinimumVersion": "7.1"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "12"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Nodejs": {
+		"Version": "24"
+	},
+	"UUID": "com.maxbaumann.streamdeckbridge",
+	"Actions": [
+		{
+			"Name": "Game Mode",
+			"UUID": "com.maxbaumann.streamdeckbridge.gamemode",
+			"Icon": "imgs/actions/gamemode/icon",
+			"Tooltip": "Switch or cycle the game mode (requires permission on servers).",
+			"PropertyInspectorPath": "ui/gamemode.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/gamemode/key",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Disconnect",
+			"UUID": "com.maxbaumann.streamdeckbridge.disconnect",
+			"Icon": "imgs/actions/disconnect/icon",
+			"Tooltip": "Leave the server or world and return to the menu.",
+			"PropertyInspectorPath": "ui/disconnect.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/disconnect/key",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Connect to Server",
+			"UUID": "com.maxbaumann.streamdeckbridge.connect",
+			"Icon": "imgs/actions/connect/icon",
+			"Tooltip": "Join a multiplayer server with one press.",
+			"PropertyInspectorPath": "ui/connect.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/connect/key",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Run Command / Chat",
+			"UUID": "com.maxbaumann.streamdeckbridge.command",
+			"Icon": "imgs/actions/command/icon",
+			"Tooltip": "Run a command or send a chat message.",
+			"PropertyInspectorPath": "ui/command.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/command/key",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Perspective",
+			"UUID": "com.maxbaumann.streamdeckbridge.perspective",
+			"Icon": "imgs/actions/perspective/icon",
+			"Tooltip": "Toggle between first and third person (F5).",
+			"PropertyInspectorPath": "ui/perspective.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/perspective/key",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Fullscreen",
+			"UUID": "com.maxbaumann.streamdeckbridge.fullscreen",
+			"Icon": "imgs/actions/fullscreen/icon",
+			"Tooltip": "Toggle fullscreen (F11).",
+			"PropertyInspectorPath": "ui/connection.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/fullscreen/key",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Screenshot",
+			"UUID": "com.maxbaumann.streamdeckbridge.screenshot",
+			"Icon": "imgs/actions/screenshot/icon",
+			"Tooltip": "Take a screenshot (F2).",
+			"PropertyInspectorPath": "ui/connection.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/screenshot/key",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Hide HUD",
+			"UUID": "com.maxbaumann.streamdeckbridge.hud",
+			"Icon": "imgs/actions/hud/icon",
+			"Tooltip": "Show or hide the HUD (F1).",
+			"PropertyInspectorPath": "ui/connection.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/hud/key",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Debug Screen",
+			"UUID": "com.maxbaumann.streamdeckbridge.debug",
+			"Icon": "imgs/actions/debug/icon",
+			"Tooltip": "Show or hide the F3 debug overlay.",
+			"PropertyInspectorPath": "ui/connection.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/debug/key",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Pause / Resume",
+			"UUID": "com.maxbaumann.streamdeckbridge.pause",
+			"Icon": "imgs/actions/pause/icon",
+			"Tooltip": "Open or close the pause menu.",
+			"PropertyInspectorPath": "ui/connection.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/pause/key",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Volume",
+			"UUID": "com.maxbaumann.streamdeckbridge.volume",
+			"Icon": "imgs/actions/volume/icon",
+			"Tooltip": "Mute or adjust a sound category. Supports Stream Deck + dials.",
+			"PropertyInspectorPath": "ui/volume.html",
+			"Controllers": [
+				"Keypad",
+				"Encoder"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/volume/key",
+					"TitleAlignment": "bottom"
+				}
+			],
+			"Encoder": {
+				"layout": "$B1",
+				"Icon": "imgs/actions/volume/key",
+				"TriggerDescription": {
+					"Rotate": "Adjust volume",
+					"Push": "Mute / unmute",
+					"Touch": "Mute / unmute"
+				}
+			}
+		},
+		{
+			"Name": "Hotbar Slot",
+			"UUID": "com.maxbaumann.streamdeckbridge.hotbar",
+			"Icon": "imgs/actions/hotbar/icon",
+			"Tooltip": "Select a hotbar slot.",
+			"PropertyInspectorPath": "ui/hotbar.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/hotbar/key",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Ping",
+			"UUID": "com.maxbaumann.streamdeckbridge.ping",
+			"Icon": "imgs/actions/ping/icon",
+			"Tooltip": "Shows your current latency to the server.",
+			"PropertyInspectorPath": "ui/connection.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/ping/key",
+					"TitleAlignment": "bottom"
+				}
+			],
+			"SupportedInMultiActions": false
+		},
+		{
+			"Name": "FPS",
+			"UUID": "com.maxbaumann.streamdeckbridge.fps",
+			"Icon": "imgs/actions/fps/icon",
+			"Tooltip": "Shows the current frame rate.",
+			"PropertyInspectorPath": "ui/connection.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/fps/key",
+					"TitleAlignment": "bottom"
+				}
+			],
+			"SupportedInMultiActions": false
+		},
+		{
+			"Name": "Coordinates",
+			"UUID": "com.maxbaumann.streamdeckbridge.coordinates",
+			"Icon": "imgs/actions/coordinates/icon",
+			"Tooltip": "Shows your position and dimension; optionally shares it in chat.",
+			"PropertyInspectorPath": "ui/coordinates.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/coordinates/key",
+					"TitleAlignment": "bottom"
+				}
+			],
+			"SupportedInMultiActions": false
+		},
+		{
+			"Name": "Server Status",
+			"UUID": "com.maxbaumann.streamdeckbridge.status",
+			"Icon": "imgs/actions/status/icon",
+			"Tooltip": "Shows the server you are connected to and the player count.",
+			"PropertyInspectorPath": "ui/connection.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/status/key",
+					"TitleAlignment": "bottom"
+				}
+			],
+			"SupportedInMultiActions": false
+		}
+	]
+}

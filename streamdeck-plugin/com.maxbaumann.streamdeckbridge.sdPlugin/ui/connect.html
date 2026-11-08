@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head lang="en">
+		<title>Connect to Server</title>
+		<meta charset="utf-8" />
+		<script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+	</head>
+	<body>
+		<sdpi-item label="Address">
+			<sdpi-textfield setting="address" placeholder="play.example.com:25565" required></sdpi-textfield>
+		</sdpi-item>
+		<sdpi-item label="Label">
+			<sdpi-textfield setting="name" placeholder="Shown on the key (optional)"></sdpi-textfield>
+		</sdpi-item>
+		<sdpi-item>
+			<div style="opacity: 0.7; line-height: 1.4;">If you are already in a world, Minecraft leaves it first. The key lights up while you are connected to this server.</div>
+		</sdpi-item>
+		<script src="connection.js"></script>
+	</body>
+</html>
